@@ -299,7 +299,7 @@
 
 <!-- jquery coding -->
 <script>
-	var darkmode = false; // dark mode toggler
+	var darkmode = true; // dark mode toggler
 	var Navbar = {
 		changeColor: function() {
 			if (darkmode === true) {
@@ -325,9 +325,8 @@
 				backgroundColor = this.light;
 			}
 			$('html').css('color', color);
-			$('body').css('color', color);		
+			$('p').css('color', color);		
 			$('a').css('color', color);
-			$('div').css('color', color);
 			$('html').css('background-color', backgroundColor);
 			$('body').css('background-color', backgroundColor);
 			$('.card-body').css('background-color', backgroundColor);
