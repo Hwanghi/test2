@@ -335,6 +335,7 @@
 		}
 	}
 	
+	// dayNightHandler
 	$("button").on("click", function() {
 		if (darkmode === true){
 			$(this).html('day');
@@ -344,7 +345,6 @@
 		}
 		Navbar.changeColor();
 		Main.changeColor();
-		Image.changeColor();
 		darkmode = !darkmode;
 	});
 </script>
