@@ -21,7 +21,8 @@
 		<button class="navbar-toggler" type="button" data-toggle="collapse" 
 		data-target="#navbarResponsive">
 		<span class="navbar-toggler-icon"></span>
-	</button>
+		</button>
+	</div>
 	<div class="collapse navbar-collapse" id="navbarResponsive">
 		<ul class="navbar-nav ml-auto">
 			<li class="nav-item">
@@ -41,7 +42,6 @@
 			</li>
 		</ul>	
 	</div>
-		
 </div>	
 </nav>
 
@@ -58,7 +58,7 @@
 			<div class="carousel-caption">
 				<h1 class="display-2">Bootstrap</h1>
 				<h3>Complete Website Layout</h3>
-				<button type="button" class="btn btn-outline-light btn-lg">VIEW DEMO</button>
+				<button type="button" class="btn btn-outline-light btn-lg">night</button>
 				<button type="button" class="btn btn-primary btn-lg">Get Started</button>
 			</div>
 		</div>
@@ -297,6 +297,57 @@
 	</div>
 </footer>
 
+<!-- jquery coding -->
+<script>
+	var darkmode = false; // dark mode toggler
+	var Navbar = {
+		changeColor: function() {
+			if (darkmode === true) {
+				$('.navbar').addClass('navbar-dark').removeClass('navbar-light');
+				$('.navbar').addClass('bg-dark').removeClass('bg-light');
+			} else {
+				$('.navbar').addClass('navbar-light').removeClass('navbar-dark');
+				$('.navbar').addClass('bg-light').removeClass('bg-dark');
+			}
+		}
+	}
+	var Main = {
+		light: "white",
+		dark : "black",
+		changeColor: function() {
+			var color;
+			var backgroundColor;
+			if (darkmode === true) {
+				color = this.light;
+				backgroundColor = this.dark;	
+			} else {
+				color = this.dark;
+				backgroundColor = this.light;
+			}
+			$('html').css('color', color);
+			$('body').css('color', color);		
+			$('a').css('color', color);
+			$('div').css('color', color);
+			$('html').css('background-color', backgroundColor);
+			$('body').css('background-color', backgroundColor);
+			$('.card-body').css('background-color', backgroundColor);
+			$('.row').css('background-color', backgroundColor);
+		}
+	}
+	
+	$("button").on("click", function() {
+		if (darkmode === true){
+			$(this).html('day');
+		}
+		else {
+			$(this).html('night');
+		}
+		Navbar.changeColor();
+		Main.changeColor();
+		Image.changeColor();
+		darkmode = !darkmode;
+	});
+</script>
 </body>
 </html>
 
